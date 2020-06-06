@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页</title>
+    <%- include head %>
+</head>
+<body>
+<!--第一部分-->
+<%-include('bar',{account:account})%>
+<!--第二部分-->
+<div class="article">
+    <form action="/article/add" method="post">
+        <input type="hidden" name="id" value="">
+        <input type="hidden" name="page" value="">
+        <input type="text" name="title" placeholder="请输入文章标题" value="">
+        <textarea name="content" class="xheditor"></textarea>
+        <input type="submit" value="发布" class="submit_button">
+    </form>
+</div>
+<script type="text/javascript" src="/xheditor/jquery/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="/xheditor/xheditor-1.2.2.min.js"></script>
+<script type="text/javascript" src="/xheditor/xheditor_lang/zh-cn.js"></script>
+<script>
+    $('.xheditor').xheditor({
+        tools: 'full',
+        skin: 'default'
+    });
+</script>
+</body>
+</html>

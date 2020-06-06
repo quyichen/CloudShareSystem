@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>注册页面</title>
+    <%- include head %>
+</head>
+<style>
+    .L_section{
+        text-align: center;
+    }
+    .L_head_img{
+        margin-top: 50px;
+    }
+    .L_form_div{
+        background: white;
+        width:90%;
+        margin:0 auto;
+        border:1px solid #cccccc;
+        border-radius: 5px;
+        height: 150px;
+        margin-top: 30px;
+    }
+    .L_form_div div span{
+        font-size: 20px;
+        padding-left: 15px;
+        line-height: 50px;
+    }
+    .L_account_div{
+        height: 50px;
+        border-bottom: 1px solid #cccccc;
+    }
+    .L_password_div{
+      border-top:1px solid #cccccc ;
+    }
+    input{
+        outline: medium;
+        background-color: transparent;
+        border:0;
+    }
+    .Login_btn_div{
+        height:50px;
+        background: rgb(36,92,161);
+        width: 90%;
+        border-radius: 10px;
+        margin:20px auto;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .Login_btn_div input{
+        line-height: 50px;
+        font-size:20px;
+        color:white;
+    }
+    .a_style {
+        text-align: center;
+        margin-top: 85px;
+    }
+    .a_style a{
+        text-decoration: none;
+    }
+</style>
+<body>
+<!--第二部分-->
+<section class="L_section">
+    <img class="L_head_img" src="/images/head.png">
+</section>
+<!--第三部分-->
+<form action="/users/regist" method="post">
+    <div class="L_form_div">
+        <div class="L_account_div">
+            <span>输入账号</span>
+            <input class="" type="text" name="account" id="l_account"><br>
+        </div>
+        <div>
+            <span>输入密码</span>
+            <input class="" type="password" name="password" id="l_password"><br>
+        </div>
+        <div class="L_password_div">
+            <span>确认密码</span>
+            <input class="" type="password" name="password2" id="l_password"><br>
+        </div>
+        <div class="Login_btn_div">
+            <input id="login_btn" type="submit" value="注册">
+        </div>
+    </div>
+</form>
+<div class="a_style">
+    已有帐号，<a href="/login">立即登录</a>
+</div>
+</section>
+</body>
+</html>

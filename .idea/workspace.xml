@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e48bed39-f86b-4213-b048-006223cb85f5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1ctIcWfGKZYzZc8n1RTzvDSXq6v" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/commejs" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\project\CloudShareSystem\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\project\CloudShareSystem\views\commejs" />
+      <recent name="F:\project\CloudShareSystem\public\images" />
+      <recent name="F:\project\CloudShareSystem\public\javascripts\xheditor" />
+      <recent name="F:\project\CloudShareSystem\public\stylesheets" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e48bed39-f86b-4213-b048-006223cb85f5" name="Default Changelist" comment="" />
+      <created>1591341542446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591341542446</updated>
+      <workItem from="1591341543679" duration="16728000" />
+      <workItem from="1591421699666" duration="3899000" />
+      <workItem from="1591428473361" duration="5837000" />
+      <workItem from="1591434899813" duration="16658000" />
+      <workItem from="1591453591436" duration="4471000" />
+      <workItem from="1591458946137" duration="125000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="339" y="164" key="run.anything.popup" timestamp="1591356521155">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="164" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1591356521155" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1591355235680">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1591355235680" />
+  </component>
+</project>
