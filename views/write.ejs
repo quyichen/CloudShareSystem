@@ -4,27 +4,53 @@
     <title>首页</title>
     <%- include head %>
 </head>
+<link rel="stylesheet" type="text/css" href="/simditor/site/assets/styles/simditor.css" />
 <body>
 <!--第一部分-->
-<%-include('bar',{account:account})%>
+<header>
+    <%- include('bar',{name:name}) %>
+</header>
 <!--第二部分-->
 <div class="article">
     <form action="/article/add" method="post">
-        <input type="hidden" name="id" value="">
-        <input type="hidden" name="page" value="">
-        <input type="text" name="title" placeholder="请输入文章标题" value="">
-        <textarea name="content" class="xheditor"></textarea>
+        <input type="hidden" name="id" value="<%= item.id%>">
+        <input type="hidden" name="page" value="<%=item.page%>">
+        <input type="text" name="title" placeholder="请输入文章标题" value="<%=item.title%>">
+        <input type="text" name="class" placeholder="请输入类别" value="<%=item.class%>">
+        <textarea name="content" id="editor"><%- item.content%></textarea>
+        <%if(item.id){%>
+        <input type="submit" value="修改" class="submit_button">
+       <%}else{%>
         <input type="submit" value="发布" class="submit_button">
+        <%}%>
     </form>
 </div>
-<script type="text/javascript" src="/xheditor/jquery/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="/xheditor/xheditor-1.2.2.min.js"></script>
-<script type="text/javascript" src="/xheditor/xheditor_lang/zh-cn.js"></script>
-<script>
-    $('.xheditor').xheditor({
-        tools: 'full',
-        skin: 'default'
-    });
+<script type="text/javascript" src="/simditor/site/assets/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="/simditor/site/assets/scripts/module.js"></script>
+<script type="text/javascript" src="/simditor/site/assets/scripts/hotkeys.js"></script>
+<script type="text/javascript" src="/simditor/site/assets/scripts/uploader.js"></script>
+<script type="text/javascript" src="/simditor/site/assets/scripts/simditor.js"></script>
+<script type="text/javascript">
+    $(function(){
+        toolbar = [ 'title', 'bold', 'italic', 'underline', 'strikethrough',
+            'color', '|', 'ol', 'ul', 'blockquote', 'code',  '|',
+            'link', 'image', 'hr'];
+        var editor = new Simditor( {
+            textarea : $('#editor'),
+            toolbar : toolbar,  //工具栏
+            defaultImage : '/simditor/site/assets/images/image.png', //编辑器插入图片时使用的默认图片
+            pasteImage: true,
+            upload : {
+                url : '/article/upload', //文件上传的接口地址
+                params: null, //键值对,指定文件上传接口的额外參数,上传的时候随文件一起提交
+                fileKey: 'filedata', //server端获取文件数据的參数名
+                connectionCount: 3,
+                leaveConfirm: '正在上传文件'
+            }
+        });
+    })
 </script>
+<!--第3部分-->
+<%- include footer %>
 </body>
 </html>

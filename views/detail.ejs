@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文章详情</title>
+    <%- include head %>
+</head>
+<body>
+<!--第一部分，头部-->
+<header>
+    <%- include('bar',{name:name}) %>
+</header>
+<!--第二部分-->
+<div class="detail">
+    <div class="title"><%=item.title%></div>
+    <div class="desc">
+        <span>作者：<%=item.name%></span>
+        <span>时间：<%=item.time%></span>
+        <span>类别：<%=item.class%></span>
+    </div>
+    <div class="content"><%-item.content%></div>
+</div>
+<!--第3部分-->
+<%- include footer %>
+</body>
+</html>

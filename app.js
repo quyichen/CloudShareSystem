@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var articleRouter=require('./routes/article')
 
+
 var app = express();
 
 // view engine setup
@@ -22,29 +23,30 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //session的配置
 app.use(session({
-  secret:'welcome to CloudShare',
+  secret:'welcome to ShareLife',
   resave:false,
   saveUninitialized:true,
   cookie:{maxAge:1000*60*5}//指定会话的有效时长
 }))
-//登录拦截
-app.get('*',function (req,res,next) {
-  var account=req.session.account
-  console.log('session',account)
+// 登录拦截
+app.get('*', function(req, res, next) {
+  var name = req.session.name
+  var path = req.path
+  console.log('session', name)
+  if (path != '/login' && path != '/regist') {
+    if (!name) {
+     // res.redirect('/login')
+    }
+  }
   next()
-  // var path=req.path
-  // if(path!='/login'&&path!='/regist'){
-  //   if((!account)){
-  //     res.redirect('/login')
-  //   }
-  // }
 })
-
 
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/article',articleRouter)
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

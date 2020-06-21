@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>关于</title>
+    <%- include head %>
+    <style>
+        article{
+            margin:20px;
+        }
+        h3{
+            font-size:18px;
+            border-bottom: 1px solid #dddddd;
+            padding-bottom: 10px;
+        }
+        h4{
+            font-size: 14px;
+            border-bottom: 1px solid #dddddd;
+        }
+        article p{
+            font-size: 12px;
+            line-height: 2em;
+            border-bottom: 1px solid #dddddd;
+        }
+        .img_div>#banner_img1{
+          width:100%;
+            height:200px;
+        }
+        .textspan{
+            color: #03a9f4;
+        }
+    </style>
+</head>
+<body>
+<!--第一部分-->
+<header>
+    <%-include('bar',{name:name})%>
+</header>
+<!--第二部分-->
+<!--第二部分-->
+<section class="Ds_second_section">
+    <div class="img_div">
+        <img  id="banner_img1" src="/images/banner-1.jpg">
+    </div>
+    <script>
+        var bannerImg=document.getElementById("banner_img1");
+        var imgNum=1;
+        function changeImg() {
+            imgNum++;
+            if(imgNum>3){
+                imgNum=1;
+            }
+            bannerImg.src="/images/banner-"+imgNum+".jpg";
+            setInterval(changeImg,3000);
+        }
+        setInterval(changeImg,3000);
+    </script>
+</section>
+<!--第三部分-->
+<article>
+    <h3><span class="textspan">app名称：</span><%=data.Appname%></h3>
+    <h4><span class="textspan">app简介：</span><%=data.Appinfo%></h4>
+    <p><span class="textspan">app详情：</span><%-data.AppStroy%></p>
+    <p><span class="textspan">app入世时间：</span><%=data.Appbirth%></p>
+    <p><span class="textspan">app团队：</span><%=data.AppTeam%></p>
+</article>
+<!--第4部分-->
+<%- include footer %>
+</body>
+</html>

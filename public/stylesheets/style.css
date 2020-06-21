@@ -7,47 +7,57 @@ a {
   color: #03a9f4;
   text-decoration: none;
 }
-
-
-/* 登录与注册 样式 */
-.form-box {
-  width: 300px;
-  margin: 0 auto;
-  margin-top: 50px;
-}
-.form-box form>input {
-  border: none;
-  outline: none;
-  display: block;
-  height: 100%;
-  width: 100%;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  border: 1px #d9d9d9 solid;
-  border-radius: 5px;
-  font-size: 14px;
-  -webkit-transition: all .3s ease-out;
-  transition: all .3s ease-out;
-  margin-bottom: 20px;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.form-box form>input[type='text'], .form-box form>input[type='password'] {
-  padding: 0 10px;
-}
-.form-box form>input[type='submit'] {
-  font-size: 16px;
-  border: 0;
-  background-color: #03a9f4;
-  color: #fff;
-  cursor: pointer;
-}
-.form-box>div {
+/* 登录、注册样式*/
+.L_section{
   text-align: center;
+}
+.L_head_img{
+  margin-top: 75px;
+}
+.L_form_div{
+  background: white;
+  width:50%;
+  margin:0 auto;
+  border:1px solid #cccccc;
+  border-radius: 5px;
+  height: 150px;
+  margin-top: 30px;
+}
+.L_form_div div span{
+  font-size: 20px;
+  padding-left: 15px;
   line-height: 50px;
 }
-
+.L_account_div{
+  height: 50px;
+  border-bottom: 1px solid #cccccc;
+}
+input{
+  outline: medium;
+  background-color: transparent;
+  border:0;
+}
+.Login_btn_div{
+  height:50px;
+  background: rgb(36,92,161);
+  width: 90%;
+  border-radius: 10px;
+  margin:20px auto;
+  text-align: center;
+  margin-top: 5px;
+}
+.Login_btn_div input{
+  line-height: 50px;
+  font-size:20px;
+  color:white;
+}
+.a_style {
+  text-align: center;
+  margin-top: 85px;
+}
+.a_style a{
+  text-decoration: none;
+}
 /* 顶部 Bar */
 .bar {
   height: 50px;
@@ -89,13 +99,46 @@ a {
   margin-top: 10px;
   margin-left: -20px;
 }
-
+/*搜索框样式*/
+.select{
+  /*background-color:rgb(244,244,246);*/
+  background: url("../images/banner.jpg") no-repeat;
+  background-size: cover;
+  height:100px;
+}
+.select input[type='text'] {
+  margin-top: 25px;
+  margin-left: 100px;
+  width: 65%;
+  height: 35px;
+  line-height: 35px;
+  border: 1px #d9d9d9 solid;
+  border-radius: 5px;
+  font-size: 16px;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.select input[type='submit'] {
+  height: 35px;
+  width: 80px;
+  font-size: 16px;
+  border: 0;
+  background-color: #03a9f4;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.select input[type='submit']:hover {
+  box-shadow: 0px 0px 5px #03a9f4;
+}
 
 
 /* 文章列表 */
 .list {
-  width: 80%;
-  margin: 35px auto;
+  width: 85%;
+  margin: 10px auto;
 }
 .list>div.row {
   height: 50px;
@@ -125,6 +168,11 @@ a {
   float: left;
 }
 .list>.row>span:nth-child(4) {
+  display: inline-block;
+  width: 30%;
+  float: left;
+}
+.list>.row>span:nth-child(5) {
   display: inline-block;
   width: 30%;
   float: left;
@@ -182,7 +230,7 @@ a {
   display: block;
   margin: 0 auto;
   width: 100%;
-  height: 350px;
+  height: 200px;
   box-sizing: border-box;
 }
 .article input[type='submit'] {
@@ -226,4 +274,27 @@ a {
 .detail .desc span {
   display: inline-block;
   margin-right: 20px;
+}
+/*footer样式*/
+.DS_footer a{
+  display: table-cell;
+  width:20%;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+}
+footer{
+  display: table;
+  width:100%;
+  height: 30px;
+  background:rgb(244,244,246);
+  left:0;
+  bottom:40px;
+  position: fixed;
+}
+footer a span{
+  display:block;
+  front-size:12px;
+  color:black;
+  text-align: center;
 }

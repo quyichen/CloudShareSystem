@@ -4,30 +4,48 @@
     <title>首页</title>
       <%- include head %>
   </head>
+  <link rel='stylesheet' href='/stylesheets/banner.css' />
   <body>
   <!--第一部分-->
   <header>
-    <%-include('bar',{account:account})%>
+      <%- include('bar',{name:name}) %>
   </header>
-<!--  第二部分-->
-  <div class="list">
-    <% data.list.map(function(item, index) { %>
-      <div class="row">
-        <span><%= index+1 %></span>
-        <span><%= item.account %></span>
-        <span><a href="/detail?id=<%=item.id%>"><%= item.title %></a></span>
-        <span><%= item.time %></span>
-        <span>
-            <a href="/write?id=<%=item.id%>&page=<%=data.curPage%>">编辑</a>
-            <a href="/article/delete?id=<%=item.id%>&page=<%=data.curPage%>">删除</a>
-          </span>
-      </div>
-    <% }) %>
-    <div class="pages">
-      <% for(let i=1; i<=data.total; i++) { %>
-        <a href="/?page=<%= i %>"><%= i %></a>
-      <% } %>
-    </div>
+  <div class="select">
+      <form method="post" action="/article/queryByClass">
+         <input type="text" name="class">
+         <input type="submit" value="搜索" id="select">
+      </form>
   </div>
+  <div class="navdiv">
+      <ul>
+          <li><a href="/article/articles?class=articles" id="home">文章</a></li>
+          <li><a href="/article/news?class=news" id="new">新闻</a></li>
+          <li><a href="/article/diary?class=diary" id="contact">日记</a></li>
+          <li><a href="/article/life?class=life" id="contact">生活琐事</a></li>
+          <li style="float:right"><a class="active" href="/article/codeList?class=code">程序人生</a></li>
+      </ul>
+  </div>
+<!-- 第二部分-->
+  <div class="list">
+          <%data.list.map(function(item,index){%>
+         <div class="row">
+            <span><%=index+1%></span>
+            <span><%=item.name%></span>
+             <span><a href="/article/detail?id=<%=item.id%>"><%= item.title %></a></span>
+            <span><%=item.time%></span>
+            <span>
+                <a href="/write?id=<%=item.id%>&page=<%=data.nowPage%>">编辑</a>
+                <a href="/article/delete?id=<%=item.id%>&page=<%=data.nowPage%>">删除</a>
+            </span>
+         </div>
+         <%})%>
+          <div class="pages">
+              <%for(var i=1;i<=data.total;i++){%>
+              <a href="/?page=<%=i%>"><%=i%></a>
+             <%}%>
+          </div>
+  </div>
+<!--第3部分-->
+<%- include footer %>
   </body>
 </html>

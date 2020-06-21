@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>生活琐事</title>
+    <%- include head %>
+</head>
+<link rel='stylesheet' href='/stylesheets/banner.css' />
+<body>
+<!--第一部分-->
+<header>
+    <%- include('bar',{name:name}) %>
+</header>
+<!--  第二部分-->
+<div id="articlesList">
+    <div class="list">
+        <%list.map(function(item,index){%>
+        <div class="row">
+            <span><%=index+1%></span>
+            <span><%=item.name%></span>
+            <span><a href="/article/detail?id=<%=item.id%>"><%= item.title %></a></span>
+            <span><%=item.time%></span>
+            <span>
+                <a href="">编辑</a>
+                <a href="">删除</a>
+            </span>
+        </div>
+        <%})%>
+    </div>
+</div>
+</div>
+<!--第3部分-->
+<%- include footer %>
+</body>
+</html>
